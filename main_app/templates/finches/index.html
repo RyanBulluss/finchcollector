@@ -4,22 +4,22 @@
 <h1 class="display-3 my-4">All Finches</h1>
 <br>
 <br>
-<div class="row d-flex justify-content-center align-items-center">
+
     
 
 {% for finch in finches %}
-<div class="card bg-dark text-center p-3 m-2 col-lg-4">
-    <div class="">
-        <p>{{ finch.name }}</p>
-        <p>Breed: {{ finch.breed }}</p>
-        <p>Description: {{ finch.description }}</p>
-        {% if finch.age > 0 %}
-            <p>Age: {{ finch.age }}</p>
-        {% else %}
-            <p>Age: Baby</p>
-        {% endif %}
+<a href="{% url 'detail' finch.id %}" class="text-decoration-none text-black">
+    <div class="card custom-card mb-3 shadow" style="width: 20vmin;">
+        <div class="card-body">
+            <h3 class="card-title">{{ finch.name }}</h3>
+            
+        </div>
     </div>
-</div>
+</a>
+
+
+
 {% endfor %}
-</div>
+
+
 {% endblock %}

@@ -1,19 +1,5 @@
 from django.shortcuts import render
-
-finches = [
-  {'name': 'name1', 'breed': 'breed1', 'description': 'description1', 'age': 1},
-  {'name': 'name2', 'breed': 'breed2', 'description': 'description2', 'age': 2},
-  {'name': 'name3', 'breed': 'breed3', 'description': 'description3', 'age': 3},
-  {'name': 'name3', 'breed': 'breed3', 'description': 'description3', 'age': 3},
-  {'name': 'name3', 'breed': 'breed3', 'description': 'description3', 'age': 3},
-  {'name': 'name3', 'breed': 'breed3', 'description': 'description3', 'age': 3},
-  {'name': 'name3', 'breed': 'breed3', 'description': 'description3', 'age': 3},
-  {'name': 'name3', 'breed': 'breed3', 'description': 'description3', 'age': 3},
-  {'name': 'name3', 'breed': 'breed3', 'description': 'description3', 'age': 3},
-  {'name': 'name3', 'breed': 'breed3', 'description': 'description3', 'age': 3},
-  {'name': 'name3', 'breed': 'breed3', 'description': 'description3', 'age': 3},
-  {'name': 'name3', 'breed': 'breed3', 'description': 'description3', 'age': 3},
-]
+from.models import Finch
 
 # Create your views here.
 def home(request):
@@ -23,6 +9,13 @@ def about(request):
     return render(request, 'about.html')
 
 def finches_index(request):
+    finches = Finch.objects.all()
     return render(request, 'finches/index.html', {
         'finches': finches
+    })
+
+def finch_detail(request, finch_id):
+    finch = Finch.objects.get(id=finch_id)
+    return render(request, 'finches/detail.html', {
+        'finch': finch
     })

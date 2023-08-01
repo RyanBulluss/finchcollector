@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="display-3 my-5">Finch Details</h1>
+
+
+    <div class="card custom-card my-3 shadow" style="width: 30vmin">
+        <div class="card-body">
+            <p>{{ finch.name }}</p>
+            <p>Color: {{ finch.color }}</p>
+            <p>Height (cm): {{ finch.height }}</p>
+            <p>Age: {{ finch.age }}</p>
+        </div>
+    </div>
+
+
+{% endblock %}
