@@ -1,18 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1 class="display-3 my-4">All Finches</h1>
-<br>
-<br>
+<h1>All Finches</h1>
 
-    
 
 {% for finch in finches %}
-<a href="{% url 'detail' finch.id %}" class="text-decoration-none text-black">
-    <div class="card custom-card mb-3 shadow" style="width: 20vmin;">
-        <div class="card-body">
+<a href="{% url 'detail' finch.id %}">
+    <div class="card">
+        <div class="card-content">
             <h3 class="card-title">{{ finch.name }}</h3>
-            
         </div>
     </div>
 </a>

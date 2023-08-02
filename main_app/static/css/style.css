@@ -1,9 +1,8 @@
 body {
-    background-color: #222;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    color: white;
+    background-color: #ccc;
 }
 
 main {
