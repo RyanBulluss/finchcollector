@@ -17,15 +17,11 @@
                     <a href="/" class="left breand-logo">&nbsp;&nbsp;Home</a>
                 </ul>
                 <ul class="right">
-                    <li class="nav-item">
-                        <a href="/about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/finches/create">Add a Finch</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/finches">View All Finches</a>
-                    </li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="{% url 'toys_create' %}">Add a Toy</a></li>
+                    <li><a href="{% url 'toys_index' %}">View All Toys</a></li>
+                    <li><a href="/finches/create">Add a Finch</a></li>
+                    <li><a href="/finches">View All Finches</a></li>
                 </ul>
             </div>
         </nav>
